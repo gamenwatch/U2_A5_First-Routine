@@ -26,12 +26,12 @@ public class U2_A5_FirstSubroutine {
         //mass
         System.out.println("What is your mass? (kg)");
         double mass;
-        mass = keyedInput.nextInt();
+        mass = keyedInput.nextDouble();
         
         //acceleration
         System.out.println("What is your acceleration? (m/s^2)");
         double acceleration;
-        acceleration = keyedInput.nextInt();
+        acceleration = keyedInput.nextDouble();
         
         //Force
         double force;
@@ -45,12 +45,12 @@ public class U2_A5_FirstSubroutine {
         //force upwards
         System.out.println("What is the magnitude of the force upward? (N)");
         double forceUp;
-        forceUp = keyedInput.nextInt();
+        forceUp = keyedInput.nextDouble();
         
         //force downwards
         System.out.println("What is the magnitude of the force downward? (N)");
         double forceDown;
-        forceDown = keyedInput.nextInt();
+        forceDown = keyedInput.nextDouble();
         
         //Net Force
         double forceNet;
@@ -61,20 +61,72 @@ public class U2_A5_FirstSubroutine {
     public static void acelerationOut() {
         Scanner keyedInput = new Scanner(System.in);
         
-        //force upwards
-        System.out.println("What is the magnitude of the force upward? (N)");
-        double forceUp;
-        forceUp = keyedInput.nextInt();
+        //velocity 1
+        System.out.println("What is the magnitude of the initial velocity foward? (m/s^2)");
+        double velocityOne;
+        velocityOne = keyedInput.nextDouble();
         
-        //force downwards
-        System.out.println("What is the magnitude of the force downward? (N)");
-        double forceDown;
-        forceDown = keyedInput.nextInt();
+        //velocity 2
+        System.out.println("What is the magnitude of the final velocity foward? (m/s^2)");
+        double velocityTwo;
+        velocityTwo = keyedInput.nextDouble();
         
-        //Net Force
-        double forceNet;
-        forceNet = forceUp-forceDown; 
-        System.out.println("Your Net Force is: "+forceNet+"N [upwards]");
+        //time
+        System.out.println("What is the magnitude of time? (s)");
+        double time;
+        time = keyedInput.nextDouble();
+        
+        //Acceleration
+        double acceleration;
+        acceleration = (velocityTwo-velocityOne)/time; 
+        System.out.println("Your Acceleration is: "+acceleration+"m/s [fowards]");
+}
+    
+    public static void gravitationalPotentialEnergyOut() {
+        Scanner keyedInput = new Scanner(System.in);
+        
+        //mass
+        System.out.println("What is the mass of the object? (kg)");
+        double mass;
+        mass = keyedInput.nextDouble();
+        
+        //height
+        System.out.println("What is the height up from the zero? (m)");
+        double height;
+        height = keyedInput.nextDouble();
+        
+        //gravitationalPotentialEnergyOut
+        double gpe;
+        gpe = mass*height*9.8; 
+        System.out.println("Your Gravitational Potential Energy is: "+gpe+"J");
+}
+    
+    public static void averageOut() {
+        Scanner keyedInput = new Scanner(System.in);
+        
+        //How many marks do you want to average?
+        int overallAverage = 0;
+        System.out.println("How many marks do you want to average?");
+        int numMarks = keyedInput.nextInt();        
+        
+        //array for each mark
+        int []marksPct = new int [numMarks];
+        System.out.println("\nEnter all your grades:");
+        
+        //input values
+        for (int i = 0; i < numMarks; i = i+1)
+        {
+           marksPct[i] = keyedInput.nextInt();
+        }
+        
+        //total then average
+        for (int i = 0; i < numMarks; i = i+1)
+        {
+           overallAverage = overallAverage+marksPct[i];
+        }
+        overallAverage = overallAverage/numMarks;
+        
+        System.out.println("Your average is:"+overallAverage);
 }
     
 //////////////////////////////////////////////////////////////////////////
@@ -96,7 +148,7 @@ public class U2_A5_FirstSubroutine {
         System.out.println("5)Average Grades\n");
         
         calculationChoice = keyedInput.nextInt();
-        System.out.println("Choice is:"+calculationChoice); //test
+        //System.out.println("Choice is:"+calculationChoice); //test
         
         switch (calculationChoice) {
             case 1:
@@ -105,6 +157,16 @@ public class U2_A5_FirstSubroutine {
             case 2:
                 forceTwoOut();
                 break;
+            case 3:
+                acelerationOut();
+                break;
+            case 4:
+                gravitationalPotentialEnergyOut();
+                break;
+            case 5:
+                averageOut();
+                break;
+            
         }
                 
         
