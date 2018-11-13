@@ -13,10 +13,11 @@ import java.util.Scanner;
  * Jacob Lacey
  * Practice making your own methods
  */
+
 public class U2_A5_FirstSubroutine {
 
     /**
-     * @param args the command line arguments
+     * This method calculates the next force HOR with mass and acceleration
      */
     
     //ADITIONAL METHODS
@@ -39,6 +40,10 @@ public class U2_A5_FirstSubroutine {
         System.out.println("Your Force is: "+force+"N");
 }
     
+    /**
+     * This method calculates the next force VER with force up and force down
+     */
+    
     public static void forceTwoOut() {
         Scanner keyedInput = new Scanner(System.in);
         
@@ -57,6 +62,10 @@ public class U2_A5_FirstSubroutine {
         forceNet = forceUp-forceDown; 
         System.out.println("Your Net Force is: "+forceNet+"N [upwards]");
 }
+    
+    /**
+     * Calculates Acceleration with initial & final velocity and time
+     */
     
     public static void acelerationOut() {
         Scanner keyedInput = new Scanner(System.in);
@@ -82,6 +91,10 @@ public class U2_A5_FirstSubroutine {
         System.out.println("Your Acceleration is: "+acceleration+"m/s [fowards]");
 }
     
+    /**
+     * Calculates GPE with mass and height
+     */
+    
     public static void gravitationalPotentialEnergyOut() {
         Scanner keyedInput = new Scanner(System.in);
         
@@ -99,7 +112,11 @@ public class U2_A5_FirstSubroutine {
         double gpe;
         gpe = mass*height*9.8; 
         System.out.println("Your Gravitational Potential Energy is: "+gpe+"J");
-}
+} 
+    
+    /**
+     * Calculates Average Grade with all the grades
+     */
     
     public static void averageOut() {
         Scanner keyedInput = new Scanner(System.in);
